@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team5126.robot.commands.ExampleCommand;
 import org.usfirst.frc.team5126.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team5126.robot.subsystems.PneumaticSystem;
 import org.usfirst.frc.team5126.robot.subsystems.RobotDriveSubSystem;
 
 /**
@@ -27,6 +28,7 @@ public class Robot extends IterativeRobot {
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
+	public static PneumaticSystem pneumaticControl;
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -34,6 +36,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void robotInit() {
+		pneumaticControl = new PneumaticSystem();
 		oi = new OI();
 		
 		chooser.addDefault("Default Auto", new ExampleCommand());

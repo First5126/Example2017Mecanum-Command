@@ -2,8 +2,10 @@ package org.usfirst.frc.team5126.robot;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
+import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 import org.usfirst.frc.team5126.robot.commands.ExampleCommand;
+import org.usfirst.frc.team5126.robot.commands.ExtendRetractPiston1;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -39,6 +41,11 @@ public class OI {
 	// until it is finished as determined by it's isFinished method.
 	// button.whenReleased(new ExampleCommand());
 	
+	public OI(){
+		JoystickButton but3 = new JoystickButton(stick0, 3);
+		JoystickButton but1 = new JoystickButton(stick0,1);
+		but1.whenPressed(new ExtendRetractPiston1());
+	}
 	public Joystick getStick0(){
 		return this.stick0;
 	}

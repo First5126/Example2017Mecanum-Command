@@ -1,6 +1,10 @@
 package org.usfirst.frc.team5126.robot;
 
+import com.ctre.CANTalon;
+
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.Victor;
 
 /**
@@ -26,6 +30,10 @@ public class RobotMap {
 	
 	public static RobotDrive rd = new RobotDrive(frontLeft,frontRight,rearLeft,rearRight);
 	
+	public static CANTalon t1 = new CANTalon(0);
+	
+	public static Compressor compressorCtrl = new Compressor();
+	public static Solenoid pistor1 = new Solenoid(0,0);
 	
 			
 }
